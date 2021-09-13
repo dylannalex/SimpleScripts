@@ -14,3 +14,8 @@ def dot_product(v1, v2):
 
 def scale(v: list, k: float):
     return [k * i for i in v]
+
+
+def subtract_vectors(v1, v2):
+    """returns v1 - v2"""
+    return sum_vectors(v1, scale(v2, -1))
