@@ -19,3 +19,19 @@ def scale(v: list, k: float):
 def subtract_vectors(v1, v2):
     """returns v1 - v2"""
     return sum_vectors(v1, scale(v2, -1))
+
+
+def main():
+    v1 = [1, 2, 3]
+    v2 = [6, 7, 8]
+    k = 2
+    print(f"Sum vectors:        v1 + v2 = {sum_vectors(v1, v2)}\n\n")
+    print(f"Dot product:        v1.v2 = {dot_product(v1, v2)}\n\n")
+    print(f"Scale vector:       k.v1 = {scale(v1, k)}")
+    print(f"                    k.v2 = {scale(v2, k)}\n\n")
+    print(f"Subtract vectors:   v1 - v2 = {subtract_vectors(v1,v2)}")
+    print(f"                    v2 - v1 = {subtract_vectors(v2,v1)}")
+
+
+if __name__ == "__main__":
+    main()
