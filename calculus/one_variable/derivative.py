@@ -5,6 +5,16 @@ from math import sqrt
 def derivative(f: Callable, a: float):
     """
     Returns f derivative at a point --> derivative(f, a) = f'(a)
+
+    Example:
+
+    def f(x): return x**2
+
+    derivative(f, 2)
+    >>> 3.9968028886505635
+
+    derivative(f, 10)
+    >>> 19.895196601282805
     """
     dx = 1e-13
     return (f(a + dx) - f(a)) / dx
