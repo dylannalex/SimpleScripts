@@ -21,6 +21,17 @@ def subtract_vectors(v1, v2):
     return sum_vectors(v1, scale(v2, -1))
 
 
+def cross_product(v1, v2):
+    if len(v1) != 3 or len(v2) != 3:
+        raise ValueError("Both vectors must be three-dimensional")
+
+    return [
+        v1[1] * v2[2] - v1[2] * v2[1],
+        v1[2] * v2[0] - v1[0] * v2[2],
+        v1[0] * v2[1] - v1[1] * v2[0],
+    ]
+
+
 def main():
     v1 = [1, 2, 3]
     v2 = [6, 7, 8]
@@ -30,7 +41,8 @@ def main():
     print(f"Scale vector:       k.v1 = {scale(v1, k)}")
     print(f"                    k.v2 = {scale(v2, k)}\n\n")
     print(f"Subtract vectors:   v1 - v2 = {subtract_vectors(v1,v2)}")
-    print(f"                    v2 - v1 = {subtract_vectors(v2,v1)}")
+    print(f"                    v2 - v1 = {subtract_vectors(v2,v1)}\n\n")
+    print(f"Cross product:      v1 x v2 = {cross_product(v1, v2)}")
 
 
 if __name__ == "__main__":
